@@ -4,28 +4,23 @@
  */
 package modell;
 
-import java.util.Scanner;
+public class JatekModell {
 
-public class Jatek {
-    private static final Scanner sc=new Scanner(System.in);
     private final Lada[] ladak;
     private int valasztas;
     
     //osztaly, adattag, konstruktor-paraméter? hányféle, adattag?
 
-    public Jatek() {
+    public JatekModell() {
         ladak = new Lada[3];
         valasztas= -1;
         ladak[0]= new Lada("arany", "Én rejtem a kincset!");
         ladak[1]= new Lada("ezüst", "Nem én rejtem a kincset!", true);
         ladak[2]= new Lada("bronz", "Az arany hazudik!");
         
-        megjelenit(kezdes());
-        bekeres();
-        megjelenit(ellenorzes());
     }
 
-    private String kezdes() {
+    public String kezdes() {
         String s="Hol a kincs? Csak az egyik felirat igaz!\n";
         int i =1;
         for (Lada lada : ladak) {
@@ -36,20 +31,18 @@ public class Jatek {
         return s;
     }
 
-    private void bekeres() {
-        megjelenit("Melyik ládában van a kincs? (1,2,3)");
-        valasztas= sc.nextInt();
-        
-    }
-    
-    private void megjelenit(String uzenet){
-        System.out.println(uzenet);
+    public int getValasztas() {
+        return valasztas;
     }
 
-    private String ellenorzes() {
+    public void setValasztas(int valasztas) {
+        this.valasztas = valasztas;
+    }
+    
+    public String ellenorzes() {
         String talalt="Gratulálunk, eltaláltad!";
         String nemTalalt="Sajnos nem talált!";
-        return ladak[valasztas-1].isKincs() ? talalt : nemTalalt;
+        return ladak[valasztas].isKincs() ? talalt : nemTalalt;
     }
     
     
