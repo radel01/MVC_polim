@@ -5,13 +5,17 @@
 package vezerlo;
 
 import modell.JatekModell;
-import nezet.KonzolNezet;
+import nezet.FelugroNezet;
 
-public class KonzolVezerlo {
+/**
+ *
+ * @author roszkopf.a.lena
+ */
+public class FelugroVezerlo {
     private JatekModell modell;
-    private KonzolNezet nezet;
+    private FelugroNezet nezet;
 
-    public KonzolVezerlo(JatekModell modell, KonzolNezet nezet) {
+    public FelugroVezerlo(JatekModell modell, FelugroNezet nezet) {
         this.modell = modell;
         this.nezet = nezet;
         
@@ -24,6 +28,4 @@ public class KonzolVezerlo {
         nezet.megjelenit(modell.ellenorzes());
         
     }
-    
-    
 }
