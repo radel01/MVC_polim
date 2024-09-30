@@ -6,13 +6,13 @@ package vezerlo;
 
 import modell.JatekModell;
 import nezet.CuiNezet;
-import nezet.FelugroNezet;
 
-public class FelugroVezerlo {
+
+public class CuiVezerlo {
     private JatekModell modell;
     private CuiNezet nezet;
 
-    public FelugroVezerlo(JatekModell modell, CuiNezet nezet) {
+    public CuiVezerlo(JatekModell modell, CuiNezet nezet) {
         this.modell = modell;
         this.nezet = nezet;
         
@@ -26,3 +26,4 @@ public class FelugroVezerlo {
         
     }
 }
+

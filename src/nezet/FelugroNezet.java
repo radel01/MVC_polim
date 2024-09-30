@@ -4,16 +4,16 @@
  */
 package nezet;
 
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class FelugroNezet {
-    private static final Scanner sc=new Scanner(System.in);
+public class FelugroNezet extends CuiNezet{
         
+    @Override
     public void megjelenit(String uzenet){
         JOptionPane.showMessageDialog(null, uzenet);
     }
 
+    @Override
     public int bekeres() {
         String felugro=JOptionPane.showInputDialog(null,"Melyik ládában van a kincs? (1,2,3)");     
         return Integer.parseInt(felugro)-1;

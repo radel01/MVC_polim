@@ -5,21 +5,28 @@
 package main;
 
 import modell.JatekModell;
+import nezet.CuiNezet;
 import nezet.FelugroNezet;
 import nezet.KonzolNezet;
-import vezerlo.FelugroVezerlo;
-import vezerlo.KonzolVezerlo;
+import vezerlo.CuiVezerlo;
+
 
 public class KincsesLada {
 
     public static void main(String[] args) {
         
         JatekModell modell=new JatekModell();
-        KonzolNezet nezet=new KonzolNezet();
-        FelugroNezet felNezet=new FelugroNezet();
-        
-        //new KonzolVezerlo(modell, nezet);
-        new FelugroVezerlo(modell, felNezet);
+//        KonzolNezet nezet=new KonzolNezet();
+//        FelugroNezet felNezet=new FelugroNezet();
+//        
+//        //new KonzolVezerlo(modell, nezet);
+//        new FelugroVezerlo(modell, felNezet);
+
+    //POLIM,ORFIZMUS,közös őst csinálunk, így hivatkozni tudunk az utódaira
+        CuiNezet nezet;
+        nezet = new FelugroNezet();
+        //nezet = new FelugroNezet();
+        new CuiVezerlo(modell, nezet);
     }
     
 }
